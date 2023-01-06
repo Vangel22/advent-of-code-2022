@@ -1,5 +1,5 @@
 const { data } = require('./data.js')
-const { getTotalPoints } = require('./util.js')
+const { getTotalPoints, alterData } = require('./util.js')
 
 // Rules:
 //     - A - 1 point - Rock
@@ -10,7 +10,9 @@ const { getTotalPoints } = require('./util.js')
 //     - Z - 1 point - Scissors
 //     - Win 6 points, draw 3 points, lose 0 points
 
-const collectPoints = getTotalPoints(data)
+const alteredData = alterData(data)
+
+const collectPoints = getTotalPoints(alteredData)
 
 const totalScore = collectPoints.reduce((acc, prev) => acc + prev)
 console.log(totalScore)
