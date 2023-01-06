@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 const data = fs
-  .readFileSync('./day2/data.txt', { encoding: 'utf-8' })
+  .readFileSync('./day02/data.txt', { encoding: 'utf-8' })
   .replace(/\r/g, '')
   .trim()
   .split('\n')
