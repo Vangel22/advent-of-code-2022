@@ -113,9 +113,34 @@ function calculateChars(storeChars) {
   return scores
 }
 
+function compareThreeWords(groupedData) {
+  let storeChars = new Map()
+
+  for (let i = 0; i < groupedData.length; i++) {
+    const wordOneChars = [...groupedData[i][0][0]]
+    const wordTwoChars = [...groupedData[i][1][0]]
+    const wordThreeChars = [...groupedData[i][2][0]]
+
+    for (let j = 0; j < wordOneChars.length; j++) {
+      for (let k = 0; k < wordTwoChars.length; k++) {
+        if (wordOneChars[j] === wordTwoChars[k]) {
+          for (let l = 0; l < wordThreeChars.length; l++) {
+            if (wordOneChars[j] === wordThreeChars[l]) {
+              storeChars.set(i, wordOneChars[j])
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return storeChars
+}
+
 module.exports = {
   lowerCasePriorities,
   upperCasePriorities,
   matchingCharsStored,
   calculateChars,
+  compareThreeWords,
 }

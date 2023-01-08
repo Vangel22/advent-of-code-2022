@@ -1,4 +1,4 @@
-const { data } = require('./data')
+const { data } = require('./data-part-one')
 const { matchingCharsStored, calculateChars } = require('./util')
 
 // Lowercase item types a through z have priorities 1 through 26.
