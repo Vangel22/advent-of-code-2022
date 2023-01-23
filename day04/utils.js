@@ -20,9 +20,6 @@ const intersection = (...arrs) => {
 }
 
 const range = (from, to, inclusive = true) => {
-  console.log('from', from)
-  console.log('to', to)
-  console.log('inclusive', inclusive)
   if (to < from) {
     // Swap values if `from` is not less than `to`
     ;[from, to] = [to, from]
